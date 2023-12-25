@@ -1,3 +1,5 @@
+<img src="https://github.com/zhestaOS/diplom/blob/main/img/Simulator%20Screenshot%20-%20iPhone%2015%20-%202023-12-25%20at%2017.26.36.png?raw=true" alt="drawing" width="200"/> <img src="https://github.com/zhestaOS/diplom/blob/main/img/Simulator%20Screenshot%20-%20iPhone%2015%20-%202023-12-25%20at%2017.26.28.png?raw=true" alt="drawing" width="200"/>
+
 #### Описание:
 
 Социальная сеть - это мобильное приложение для обмена постами.
@@ -13,8 +15,3 @@
 - Просмотр постов: Пользователи могут просматривать посты других пользователей.
 
 - Избранное: Пользователи могут добавлять понравившиеся посты в избранное, чтобы легко находить их в будущем.
-
-![](https://imgbly.com/ib/sUiASdqyZu) 
-
-![](https://imgbly.com/ib/rUhhjNXyOm) 
-
