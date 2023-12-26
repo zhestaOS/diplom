@@ -22,8 +22,14 @@ final class FeedViewModel: FeedViewModelProtocol {
             return
         }
         FirestoreService.getAllPosts { [weak self] posts in
-            self?.posts = posts
-            completion()
+            ChuckNorrisJokesService().chuckNorrisPost { [weak self] post in
+                self?.posts.removeAll()
+                if let post = post {
+                    self?.posts.append(post)
+                }
+                self?.posts.append(contentsOf: posts)
+                completion()
+            }
         }
     }
 }

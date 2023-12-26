@@ -49,6 +49,7 @@
 		053CFF6C2B3833740030746C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 053CFF6B2B3833740030746C /* FirebaseFirestoreSwift */; };
 		053CFF6E2B3833740030746C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 053CFF6D2B3833740030746C /* FirebaseStorage */; };
 		053CFF702B3854D50030746C /* CreatePostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053CFF6F2B3854D50030746C /* CreatePostController.swift */; };
+		E6F81D002B3B134A003439BB /* ChuckNorrisJokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F81CFF2B3B134A003439BB /* ChuckNorrisJokesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		053CFF632B36DE700030746C /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		053CFF652B38327B0030746C /* StorageServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServise.swift; sourceTree = "<group>"; };
 		053CFF6F2B3854D50030746C /* CreatePostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostController.swift; sourceTree = "<group>"; };
+		E6F81CFF2B3B134A003439BB /* ChuckNorrisJokesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisJokesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				051D53CE2B31F017001A5938 /* AuthService.swift */,
 				051D53F62B359072001A5938 /* FirestoreService.swift */,
 				053CFF652B38327B0030746C /* StorageServise.swift */,
+				E6F81CFF2B3B134A003439BB /* ChuckNorrisJokesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				051D53EC2B3315EF001A5938 /* Alert.swift in Sources */,
 				051D53CC2B31E293001A5938 /* AuthRegistrationViewModel.swift in Sources */,
 				051D53DA2B3304CB001A5938 /* FeedViewController.swift in Sources */,
+				E6F81D002B3B134A003439BB /* ChuckNorrisJokesService.swift in Sources */,
 				051D53C72B31731E001A5938 /* AuthRegistrationViewController.swift in Sources */,
 				051D53E82B330D77001A5938 /* AuthCoordinator.swift in Sources */,
 				051D53E62B330D68001A5938 /* ProfileCoordinator.swift in Sources */,

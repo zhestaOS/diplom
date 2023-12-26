@@ -47,6 +47,7 @@ class AuthRegistrationViewController: UIViewController {
         textField.leftView = leftView
         textField.leftViewMode = .always
         textField.returnKeyType = .next
+        textField.keyboardType = .emailAddress
         textField.delegate = self
         textField.tag = 0
         textField.toAutoLayout()

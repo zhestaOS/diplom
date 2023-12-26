@@ -26,6 +26,14 @@ class PostCell: UITableViewCell {
         return label
     }()
     
+    private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .light)
+        label.textColor = .text
+        label.toAutoLayout()
+        return label
+    }()
+    
     private lazy var textContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .textContainer
@@ -85,6 +93,7 @@ class PostCell: UITableViewCell {
         contentView.addSubviews(
             avatarImageView,
             userNameLabel,
+            dateLabel,
             textContainerView
         )
         
@@ -101,9 +110,12 @@ class PostCell: UITableViewCell {
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 26),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             
-            userNameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor),
+            userNameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: -10),
             userNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 24),
             userNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
+            
+            dateLabel.leadingAnchor.constraint(equalTo: userNameLabel.leadingAnchor),
+            dateLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 2),
             
             textContainerView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
             textContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -145,6 +157,13 @@ class PostCell: UITableViewCell {
         self.post = post
         
         userNameLabel.text = post.email
+        
+        let postCreationDate = Date(timeIntervalSince1970: post.timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm, d MMMM, yyyy"//"yyyy-MM-dd hh:mm:ss"
+        let postCreationDateString = dateFormatter.string(from: postCreationDate)
+        dateLabel.text = postCreationDateString
+        
         text.text = post.text
         
         updateFavButton()

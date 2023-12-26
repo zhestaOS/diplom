@@ -9,6 +9,7 @@ import Foundation
 
 struct Post {
     let postId: String
+    let timestamp: Double
     let avatarUrl: String?
     let email: String
     let userId: String
@@ -19,7 +20,7 @@ struct Post {
     var dictionary: [String: Any] {
         var result = [
             "postId": postId,
-            "timestamp": "\(Date().timeIntervalSince1970)",
+            "timestamp": "\(timestamp)",
             "email": email,
             "userId" : userId,
             "text": text,
@@ -40,6 +41,8 @@ extension Post {
     init?(dictionary: [String : Any], isFavExternal: Bool? = nil) {
         guard
             let postId = dictionary["postId"] as? String,
+            let timestampString = dictionary["timestamp"] as? String,
+            let timestamp = Double(timestampString),
             let email = dictionary["email"] as? String,
             let userId = dictionary["userId"] as? String,
             let text = dictionary["text"] as? String,
@@ -51,6 +54,15 @@ extension Post {
             isFav = isFavExternal
         }
                 
-        self.init(postId: postId, avatarUrl: avatarUrl, email: email, userId: userId, text: text, imageUrl: imageUrl, isFav: isFav)
+        self.init(
+            postId: postId,
+            timestamp: timestamp,
+            avatarUrl: avatarUrl,
+            email: email,
+            userId: userId,
+            text: text,
+            imageUrl: imageUrl,
+            isFav: isFav
+        )
     }
 }

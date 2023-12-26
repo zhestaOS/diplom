@@ -18,7 +18,8 @@ final class FirestoreService {
         guard let userId = AuthService.userId() else { return }
         let posts = Firestore.firestore().collection(Collections.posts.rawValue)
         let post = Post(
-            postId: UUID().uuidString,
+            postId: UUID().uuidString, 
+            timestamp: Date().timeIntervalSince1970,
             avatarUrl: AuthService().avatarUrl(),
             email: AuthService().userEmail(),
             userId: userId,

@@ -19,6 +19,19 @@ class ProfileInfoCell: UITableViewCell {
         return imageView
     }()
     
+    private lazy var changeAvatarLabel: UILabel = {
+        let label = UILabel()
+        label.text = String(localized: "change").uppercased()
+        label.textAlignment = .center
+        label.layer.cornerRadius = 9
+        label.layer.masksToBounds = true
+        label.backgroundColor = .accent
+        label.textColor = .buttonTitle
+        label.font = .systemFont(ofSize: 10, weight: .light)
+        label.toAutoLayout()
+        return label
+    }()
+    
     private lazy var userNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .semibold)
@@ -57,6 +70,7 @@ class ProfileInfoCell: UITableViewCell {
     private func setupUI() {
         contentView.addSubviews(
             avatarImageView,
+            changeAvatarLabel,
             userNameLabel,
             createPostButton
         )
@@ -66,6 +80,11 @@ class ProfileInfoCell: UITableViewCell {
             avatarImageView.widthAnchor.constraint(equalToConstant: 60),
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 14),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 26),
+            
+            changeAvatarLabel.heightAnchor.constraint(equalToConstant: 18),
+            changeAvatarLabel.widthAnchor.constraint(equalToConstant: 64),
+            changeAvatarLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
+            changeAvatarLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 26),
             
             userNameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor),
             userNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),

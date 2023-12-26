@@ -76,6 +76,9 @@ final class AuthService {
                 }
                 return
             }
+            if let email = authDataResult?.user.email {
+                completion(.success(email))
+            }
         }
     }
     
